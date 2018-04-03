@@ -25,7 +25,7 @@ void display() {
  
    // Render a color-cube consisting of 6 quads with different colors
    glLoadIdentity();                 // Reset the model-view matrix
-   glTranslatef(0.0f, 0.0f, -7.0f);  // Move right and into the screen
+   glTranslatef(0.0f, -0.5f, -7.0f);  // Move right and into the screen
  
  
    glBegin(GL_QUAD_STRIP);
@@ -35,14 +35,14 @@ void display() {
       glColor3f(1.0f, 0.0f, 0.0f);
       glVertex3f(-1.3f, -0.5f, 1.0f);
       glVertex3f(-1.3f,  0.3f, 1.0f);
-      glVertex3f(-0.5f, -0.5f, 1.0f);
-      glVertex3f(-0.5f,  0.3f, 1.0f);
-      glVertex3f(-0.5f, -0.5f, 1.0f);
-      glVertex3f(-0.5f,  1.0f, 1.0f);
-      glVertex3f( 0.5f, -0.5f, 1.0f);
-      glVertex3f( 0.5f,  1.0f, 1.0f);
-      glVertex3f( 0.5f, -0.5f, 1.0f);
-      glVertex3f( 0.5f,  0.3f, 1.0f);
+      glVertex3f(-0.7f, -0.5f, 1.0f);
+      glVertex3f(-0.7f,  0.3f, 1.0f);
+      glVertex3f(-0.7f, -0.5f, 1.0f);
+      glVertex3f(-0.7f,  1.0f, 1.0f);
+      glVertex3f( 0.7f, -0.5f, 1.0f);
+      glVertex3f( 0.7f,  1.0f, 1.0f);
+      glVertex3f( 0.7f, -0.5f, 1.0f);
+      glVertex3f( 0.7f,  0.3f, 1.0f);
       glVertex3f( 1.3f, -0.5f, 1.0f);
       glVertex3f( 1.3f,  0.3f, 1.0f);
       
@@ -50,14 +50,14 @@ void display() {
       glColor3f(1.0f, 0.0f, 0.0f);
       glVertex3f(-1.3f, -0.5f, -1.0f);
       glVertex3f(-1.3f,  0.3f, -1.0f);
-      glVertex3f(-0.5f, -0.5f, -1.0f);
-      glVertex3f(-0.5f,  0.3f, -1.0f);
-      glVertex3f(-0.5f, -0.5f, -1.0f);
-      glVertex3f(-0.5f,  1.0f, -1.0f);
-      glVertex3f( 0.5f, -0.5f, -1.0f);
-      glVertex3f( 0.5f,  1.0f, -1.0f);
-      glVertex3f( 0.5f, -0.5f, -1.0f);
-      glVertex3f( 0.5f,  0.3f, -1.0f);
+      glVertex3f(-0.7f, -0.5f, -1.0f);
+      glVertex3f(-0.7f,  0.3f, -1.0f);
+      glVertex3f(-0.7f, -0.5f, -1.0f);
+      glVertex3f(-0.7f,  1.0f, -1.0f);
+      glVertex3f( 0.7f, -0.5f, -1.0f);
+      glVertex3f( 0.7f,  1.0f, -1.0f);
+      glVertex3f( 0.7f, -0.5f, -1.0f);
+      glVertex3f( 0.7f,  0.3f, -1.0f);
       glVertex3f( 1.3f, -0.5f, -1.0f);
       glVertex3f( 1.3f,  0.3f, -1.0f);
    glEnd();
@@ -65,11 +65,11 @@ void display() {
    glBegin(GL_QUADS);                // Begin drawing the color cube with 6 quads
       // Kap atas
       // Define vertices in counter-clockwise (CCW) order with normal pointing out
-      glColor3f(0.0f, 1.0f, 0.0f);     // Green
-      glVertex3f( 0.5f, 1.0f, -1.0f);
-      glVertex3f(-0.5f, 1.0f, -1.0f);
-      glVertex3f(-0.5f, 1.0f,  1.0f);
-      glVertex3f( 0.5f, 1.0f,  1.0f);
+      glColor3f(1.0f, 0.5f, 0.0f);     // Orange
+      glVertex3f( 0.7f, 1.0f, -1.0f);
+      glVertex3f(-0.7f, 1.0f, -1.0f);
+      glVertex3f(-0.7f, 1.0f,  1.0f);
+      glVertex3f( 0.7f, 1.0f,  1.0f);
  
       // Body Bawah
       glColor3f(1.0f, 0.5f, 0.0f);     // Orange
@@ -79,47 +79,47 @@ void display() {
       glVertex3f( 1.3f, -0.5f, -1.0f);
       
       // Kap Depan
-      glColor3f(0.0f, 1.0f, 0.0f);     // Green
+      glColor3f(1.0f, 0.5f, 0.0f);     // Orange
       glVertex3f( 1.3f, 0.3f, -1.0f);
-      glVertex3f( 0.5f, 0.3f, -1.0f);
-      glVertex3f( 0.5f, 0.3f,  1.0f);
+      glVertex3f( 0.7f, 0.3f, -1.0f);
+      glVertex3f( 0.7f, 0.3f,  1.0f);
       glVertex3f( 1.3f, 0.3f,  1.0f);
       
       // Kap Belakang
-      glColor3f(0.0f, 1.0f, 0.0f);     // Green
+      glColor3f(1.0f, 0.5f, 0.0f);     // Orange
       glVertex3f( -1.3f, 0.3f, -1.0f);
-      glVertex3f( -0.5f, 0.3f, -1.0f);
-      glVertex3f( -0.5f, 0.3f,  1.0f);
+      glVertex3f( -0.7f, 0.3f, -1.0f);
+      glVertex3f( -0.7f, 0.3f,  1.0f);
       glVertex3f( -1.3f, 0.3f,  1.0f);
       
       // Kaca Depan
       glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(0.5f,  1.0f, -1.0f);
-      glVertex3f(0.5f,  1.0f,  1.0f);
-      glVertex3f(0.5f,  0.3f,  1.0f);
-      glVertex3f(0.5f,  0.3f, -1.0f);
+      glVertex3f(0.7f,  1.0f, -1.0f);
+      glVertex3f(0.7f,  1.0f,  1.0f);
+      glVertex3f(0.7f,  0.3f,  1.0f);
+      glVertex3f(0.7f,  0.3f, -1.0f);
       
       // Kaca Depan
       glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(-0.5f,  1.0f, -1.0f);
-      glVertex3f(-0.5f,  1.0f,  1.0f);
-      glVertex3f(-0.5f,  0.3f,  1.0f);
-      glVertex3f(-0.5f,  0.3f, -1.0f);
+      glVertex3f(-0.7f,  1.0f, -1.0f);
+      glVertex3f(-0.7f,  1.0f,  1.0f);
+      glVertex3f(-0.7f,  0.3f,  1.0f);
+      glVertex3f(-0.7f,  0.3f, -1.0f);
           
  
       // Bemper Belakang
       glColor3f(0.0f, 0.0f, 1.0f);     // Blue
-      glVertex3f(-1.0f,  0.3f,  1.0f);
-      glVertex3f(-1.0f,  0.3f, -1.0f);
-      glVertex3f(-1.0f, -0.5f, -1.0f);
-      glVertex3f(-1.0f, -0.5f,  1.0f);
+      glVertex3f(-1.3f,  0.3f,  1.0f);
+      glVertex3f(-1.3f,  0.3f, -1.0f);
+      glVertex3f(-1.3f, -0.5f, -1.0f);
+      glVertex3f(-1.3f, -0.5f,  1.0f);
  
       // Bemper Depan
-      glColor3f(0.0f, 0.0f, 1.0f);     // Magenta
-      glVertex3f(1.0f,  0.3f, -1.0f);
-      glVertex3f(1.0f,  0.3f,  1.0f);
-      glVertex3f(1.0f, -0.5f,  1.0f);
-      glVertex3f(1.0f, -0.5f, -1.0f);
+      glColor3f(0.0f, 0.0f, 1.0f);     // Blue
+      glVertex3f(1.3f,  0.3f, -1.0f);
+      glVertex3f(1.3f,  0.3f,  1.0f);
+      glVertex3f(1.3f, -0.5f,  1.0f);
+      glVertex3f(1.3f, -0.5f, -1.0f);
    glEnd();  // End of drawing color-cube
  
    
