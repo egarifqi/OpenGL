@@ -138,8 +138,115 @@ void display() {
       glVertex3f(1.3f,  0.3f,  1.0f);
       glVertex3f(1.3f, -0.5f,  1.0f);
       glVertex3f(1.3f, -0.5f, -1.0f);
-   glEnd();  // End of drawing color-cube
-   
+      
+      //Ban Kanan Depan
+      glColor3f(0.3f, 0.1f, 0.0f);
+      glVertex3f(0.6f, -0.3f, 1.05f);
+      glVertex3f(1.0f, -0.3f, 1.05f);
+      glVertex3f(1.0f, -0.7f, 1.05f);
+      glVertex3f(0.6f, -0.7f, 1.05f);
+      
+      glVertex3f(0.6f, -0.3f, 0.8f);
+      glVertex3f(1.0f, -0.3f, 0.8f);
+      glVertex3f(1.0f, -0.7f, 0.8f);
+      glVertex3f(0.6f, -0.7f, 0.8f);
+      
+      glVertex3f(0.6f, -0.7f, 0.8f);
+      glVertex3f(1.0f, -0.7f, 1.05f);
+      glVertex3f(0.6f, -0.7f, 1.05f);
+      glVertex3f(1.0f, -0.7f, 0.8f);
+      
+      glVertex3f(1.0f, -0.3f, 0.8f);
+      glVertex3f(1.0f, -0.7f, 1.05f);
+      glVertex3f(1.0f, -0.3f, 1.05f);
+      glVertex3f(1.0f, -0.7f, 0.8f);
+      
+      glVertex3f(0.6f, -0.3f, 0.8f);
+      glVertex3f(0.6f, -0.7f, 1.05f);
+      glVertex3f(0.6f, -0.3f, 1.05f);
+      glVertex3f(0.6f, -0.7f, 0.8f);
+      
+      //Ban Kiri Depan
+      glColor3f(0.3f, 0.1f, 0.0f);
+      glVertex3f(0.6f, -0.3f, -1.05f);
+      glVertex3f(1.0f, -0.3f, -1.05f);
+      glVertex3f(1.0f, -0.7f, -1.05f);
+      glVertex3f(0.6f, -0.7f, -1.05f);
+      
+      glVertex3f(0.6f, -0.3f, -0.8f);
+      glVertex3f(1.0f, -0.3f, -0.8f);
+      glVertex3f(1.0f, -0.7f, -0.8f);
+      glVertex3f(0.6f, -0.7f, -0.8f);
+      
+      glVertex3f(0.6f, -0.7f, -0.8f);
+      glVertex3f(1.0f, -0.7f, -1.05f);
+      glVertex3f(0.6f, -0.7f, -1.05f);
+      glVertex3f(1.0f, -0.7f, -0.8f);
+      
+      glVertex3f(1.0f, -0.3f, -0.8f);
+      glVertex3f(1.0f, -0.7f, -1.05f);
+      glVertex3f(1.0f, -0.3f, -1.05f);
+      glVertex3f(1.0f, -0.7f, -0.8f);
+      
+      glVertex3f(0.6f, -0.3f, -0.8f);
+      glVertex3f(0.6f, -0.7f, -1.05f);
+      glVertex3f(0.6f, -0.3f, -1.05f);
+      glVertex3f(0.6f, -0.7f, -0.8f);
+      
+      //Ban Kanan Blkg
+      glColor3f(0.3f, 0.1f, 0.0f);
+      glVertex3f(-0.6f, -0.3f, 1.05f);
+      glVertex3f(-1.0f, -0.3f, 1.05f);
+      glVertex3f(-1.0f, -0.7f, 1.05f);
+      glVertex3f(-0.6f, -0.7f, 1.05f);
+      
+      glVertex3f(-0.6f, -0.3f, 0.8f);
+      glVertex3f(-1.0f, -0.3f, 0.8f);
+      glVertex3f(-1.0f, -0.7f, 0.8f);
+      glVertex3f(-0.6f, -0.7f, 0.8f);
+      
+      glVertex3f(-0.6f, -0.7f, 0.8f);
+      glVertex3f(-1.0f, -0.7f, 1.05f);
+      glVertex3f(-0.6f, -0.7f, 1.05f);
+      glVertex3f(-1.0f, -0.7f, 0.8f);
+      
+      glVertex3f(-1.0f, -0.3f, 0.8f);
+      glVertex3f(-1.0f, -0.7f, 1.05f);
+      glVertex3f(-1.0f, -0.3f, 1.05f);
+      glVertex3f(-1.0f, -0.7f, 0.8f);
+      
+      glVertex3f(-0.6f, -0.3f, 0.8f);
+      glVertex3f(-0.6f, -0.7f, 1.05f);
+      glVertex3f(-0.6f, -0.3f, 1.05f);
+      glVertex3f(-0.6f, -0.7f, 0.8f);
+      
+      //Ban Kiri Blkg
+      glColor3f(0.3f, 0.1f, 0.0f);
+      glVertex3f(-0.6f, -0.3f, -1.05f);
+      glVertex3f(-1.0f, -0.3f, -1.05f);
+      glVertex3f(-1.0f, -0.7f, -1.05f);
+      glVertex3f(-0.6f, -0.7f, -1.05f);
+      
+      glVertex3f(-0.6f, -0.3f, -0.8f);
+      glVertex3f(-1.0f, -0.3f, -0.8f);
+      glVertex3f(-1.0f, -0.7f, -0.8f);
+      glVertex3f(-0.6f, -0.7f, -0.8f);
+      
+      glVertex3f(-0.6f, -0.7f, -0.8f);
+      glVertex3f(-1.0f, -0.7f, -1.05f);
+      glVertex3f(-0.6f, -0.7f, -1.05f);
+      glVertex3f(-1.0f, -0.7f, -0.8f);
+      
+      glVertex3f(-1.0f, -0.3f, -0.8f);
+      glVertex3f(-1.0f, -0.7f, -1.05f);
+      glVertex3f(-1.0f, -0.3f, -1.05f);
+      glVertex3f(-1.0f, -0.7f, -0.8f);
+      
+      glVertex3f(-0.6f, -0.3f, -0.8f);
+      glVertex3f(-0.6f, -0.7f, -1.05f);
+      glVertex3f(-0.6f, -0.3f, -1.05f);
+      glVertex3f(-0.6f, -0.7f, -0.8f);
+   	  glEnd();
  
    glutSwapBuffers();  // Swap the front and back frame buffers (double buffering)
 }
