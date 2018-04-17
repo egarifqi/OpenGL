@@ -132,7 +132,81 @@ void display() {
     gluLookAt(x,y,z,
             x+lx,y+ly,z+lz,
             0.0f,1.0f,0.0f);
+   glBegin(GL_QUADS);
+   		//tembok kiri
+   		glColor3f(1.0f, 0.0f, 0.0f);
+		glVertex3f(-8.0f, -0.7f, 1.2f);
+		glVertex3f(-3.0f, -0.7f, 1.2f);
+		glVertex3f(-3.0f,  3.0f, 1.2f);
+		glVertex3f(-8.0f,  3.0f, 1.2f);
+		
+		//tembok kanan
+		glVertex3f(-8.0f, -0.7f, -7.2f);
+		glVertex3f(-3.0f, -0.7f, -7.2f);
+		glVertex3f(-3.0f,  3.0f, -7.2f);
+		glVertex3f(-8.0f,  3.0f, -7.2f);
+		
+		
+		//lantai
+		glVertex3f(-8.0f, -0.7f,  1.2f);
+		glVertex3f(-3.0f, -0.7f,  1.2f);
+		glVertex3f(-3.0f, -0.7f, -7.2f);
+		glVertex3f(-8.0f, -0.7f, -7.2f);
+		
+		//atap kiri
+		glVertex3f(-8.0f, 6.0f, -3.2f);
+		glVertex3f(-3.0f, 6.0f, -3.2f);
+		glVertex3f(-3.0f, 2.1f,  2.4f);
+		glVertex3f(-8.0f, 2.1f,  2.4f);
+		
+		//atap kanan
+		glVertex3f(-8.0f, 6.0f, -3.2f);
+		glVertex3f(-3.0f, 6.0f, -3.2f);
+		glVertex3f(-3.0f, 2.1f, -8.4f);
+		glVertex3f(-8.0f, 2.1f, -8.4f);
+		
+		//cerobong asap
+		glVertex3f(-6.0f, 3.9f, -0.8f);
+		glVertex3f(-5.0f, 3.9f, -0.8f);
+		glVertex3f(-5.0f, 6.4f, -0.8f);
+		glVertex3f(-6.0f, 6.4f, -0.8f);
+		
+		glVertex3f(-6.0f, 3.9f, -1.8f);
+		glVertex3f(-5.0f, 3.9f, -1.8f);
+		glVertex3f(-5.0f, 6.4f, -1.8f);
+		glVertex3f(-6.0f, 6.4f, -1.8f);
+		
+		glVertex3f(-6.0f, 3.9f, -1.8f);
+		glVertex3f(-6.0f, 6.4f, -1.8f);
+		glVertex3f(-6.0f, 6.4f, -0.8f);
+		glVertex3f(-6.0f, 3.9f, -0.8f);
+		
+		glVertex3f(-5.0f, 3.9f, -1.8f);
+		glVertex3f(-5.0f, 6.4f, -1.8f);
+		glVertex3f(-5.0f, 6.4f, -0.8f);
+		glVertex3f(-5.0f, 3.9f, -0.8f);
+		
+		
+		
+		
+   glEnd();
    
+   glBegin(GL_POLYGON);  
+   		//tembok belakang
+   		glVertex3f(-8.0f, -0.7f,  1.2f);
+   		glVertex3f(-8.0f, -0.7f, -7.2f);
+   		glVertex3f(-8.0f,  3.0f, -7.2f);
+   		glVertex3f(-8.0f,  6.0f, -3.2f);
+   		glVertex3f(-8.0f,  3.0f,  1.2f);
+   		
+   		//tembok depan
+   		glVertex3f(-3.0f, -0.7f,  1.2f);
+   		glVertex3f(-3.0f, -0.7f, -7.2f);
+   		glVertex3f(-3.0f,  3.0f, -7.2f);
+   		glVertex3f(-3.0f,  6.0f, -3.2f);
+   		glVertex3f(-3.0f,  3.0f,  1.2f);
+   		
+   glEnd();
    
    glBegin(GL_QUAD_STRIP);
    	  //FACE
@@ -154,18 +228,18 @@ void display() {
       
       //BACKFACE
       //glColor3f(1.0f, 0.0f, 0.0f);
-      glVertex3f(-1.3f, -0.5f, -1.0f);
-      glVertex3f(-1.3f,  0.3f, -1.0f);
-      glVertex3f(-0.7f, -0.5f, -1.0f);
-      glVertex3f(-0.7f,  0.3f, -1.0f);
-      glVertex3f(-0.7f, -0.5f, -1.0f);
-      glVertex3f(-0.7f,  1.0f, -1.0f);
-      glVertex3f( 0.7f, -0.5f, -1.0f);
-      glVertex3f( 0.7f,  1.0f, -1.0f);
-      glVertex3f( 0.7f, -0.5f, -1.0f);
-      glVertex3f( 0.7f,  0.3f, -1.0f);
-      glVertex3f( 1.3f, -0.5f, -1.0f);
-      glVertex3f( 1.3f,  0.3f, -1.0f);
+      glTexCoord2f(0.0f, 0.0f); glVertex3f(-1.3f, -0.5f, -1.0f);
+      glTexCoord2f(0.0f, 0.4f); glVertex3f(-1.3f,  0.3f, -1.0f);
+      glTexCoord2f(0.3f, 0.0f); glVertex3f(-0.7f, -0.5f, -1.0f);
+      glTexCoord2f(0.3f, 0.4f); glVertex3f(-0.7f,  0.3f, -1.0f);
+      glTexCoord2f(0.3f, 0.0f); glVertex3f(-0.7f, -0.5f, -1.0f);
+      glTexCoord2f(0.3f, 1.0f); glVertex3f(-0.7f,  1.0f, -1.0f);
+      glTexCoord2f(0.7f, 0.0f); glVertex3f( 0.7f, -0.5f, -1.0f);
+      glTexCoord2f(0.7f, 1.0f); glVertex3f( 0.7f,  1.0f, -1.0f);
+      glTexCoord2f(0.7f, 0.0f); glVertex3f( 0.7f, -0.5f, -1.0f);
+      glTexCoord2f(0.7f, 0.4f); glVertex3f( 0.7f,  0.3f, -1.0f);
+      glTexCoord2f(1.0f, 0.0f); glVertex3f( 1.3f, -0.5f, -1.0f);
+      glTexCoord2f(1.0f, 0.4f); glVertex3f( 1.3f,  0.3f, -1.0f);
    glEnd();
    
    glBegin(GL_QUADS);// Begin drawing the color cube with 6 quads
@@ -186,17 +260,17 @@ void display() {
       
       // Kap Depan
       //glColor3f(1.0f, 0.5f, 0.0f);     // Orange
-      glVertex3f( 1.3f, 0.3f, -1.0f);
-      glVertex3f( 0.7f, 0.3f, -1.0f);
-      glVertex3f( 0.7f, 0.3f,  1.0f);
-      glVertex3f( 1.3f, 0.3f,  1.0f);
+      glTexCoord2f(1.0f, 0.0f); glVertex3f( 1.3f, 0.3f, -1.0f);
+      glTexCoord2f(0.0f, 0.0f); glVertex3f( 0.7f, 0.3f, -1.0f);
+      glTexCoord2f(0.0f, 1.0f); glVertex3f( 0.7f, 0.3f,  1.0f);
+      glTexCoord2f(1.0f, 1.0f); glVertex3f( 1.3f, 0.3f,  1.0f);
       
       // Kap Belakang
       //glColor3f(1.0f, 0.5f, 0.0f);     // Orange
-      glVertex3f( -1.3f, 0.3f, -1.0f);
-      glVertex3f( -0.7f, 0.3f, -1.0f);
-      glVertex3f( -0.7f, 0.3f,  1.0f);
-      glVertex3f( -1.3f, 0.3f,  1.0f);
+      glTexCoord2f(1.0f, 0.0f); glVertex3f( -1.3f, 0.3f, -1.0f);
+      glTexCoord2f(0.0f, 0.0f); glVertex3f( -0.7f, 0.3f, -1.0f);
+      glTexCoord2f(0.0f, 1.0f); glVertex3f( -0.7f, 0.3f,  1.0f);
+      glTexCoord2f(1.0f, 1.0f); glVertex3f( -1.3f, 0.3f,  1.0f);
       
       // Kaca Depan
       //glColor3f(1.0f, 0.0f, 1.0f);     // Magenta
