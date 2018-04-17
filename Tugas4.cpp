@@ -18,6 +18,64 @@ int xOrigin = -1;
 char filename[] = "./salt_on_spoon.bmp";
 GLuint   texture[1];
 
+//LIGHTING FUNCTION
+void AmbientLighting();
+void PointLight(const float x, const float y, const float z, const float amb, const float diff, const float spec);
+void spotlight();
+
+void AmbientLighting(){
+	glEnable(GL_LIGHTING);
+	
+	double amb = .2;
+	GLfloat global_ambient[] = {amb,amb,amb,1.0};
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
+	
+}
+
+void PointLight(const float x, const float y, const float z, const float amb, const float diff, const float spec){
+	glEnable(GL_LIGHTING);
+	
+	GLfloat light_ambient[] = { amb,amb,amb, 1.0 };
+	GLfloat light_diffuse[] = {diff, diff, diff, 1.0 };
+	GLfloat light_specular[] = {spec, spec, spec, 1.0 };
+	
+	GLfloat light_position[] = {x,y,z, 0.0 };
+	 
+	glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+	
+	glEnable(GL_LIGHT0); //enable the light after setting the properties
+}
+
+void spotlight(){
+	GLfloat light_ambient[] = { 1.0, 0.0, 0.0, 1.0 };
+	GLfloat light_diffuse[] = { 1.0, 0.0, 0.0, 1.0 };
+	GLfloat light_specular[] = { 1.0, 1.0, 1.0, 1.0 };
+	GLfloat _light_position[4];
+	GLfloat _spotlight_position[4];
+	_light_position[0] =  0.0;
+	_light_position[1] = 0.0;
+	_light_position[2] = 0.0;
+	_light_position[3] = 1.0;
+	
+	_spotlight_position[0] = 0.0;
+	_spotlight_position[1] = -1.0;
+	_spotlight_position[2] = 0.0;
+	
+	glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular);
+	
+	glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse);
+	glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular);
+	
+	glEnable(GL_LIGHT7);
+    glLightfv(GL_LIGHT7, GL_POSITION, _light_position);
+}
+
 /* Initialize OpenGL Graphics */
 void initGL() {
    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
@@ -26,6 +84,8 @@ void initGL() {
    glDepthFunc(GL_LEQUAL);    // Set the type of depth-test
    glShadeModel(GL_SMOOTH);   // Enable smooth shading
    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);  // Nice perspective corrections
+   
+   glEnable(GL_NORMALIZE);
 }
 
 void loadTextureFromFile(char *filename)
@@ -73,8 +133,8 @@ void display() {
             x+lx,y+ly,z+lz,
             0.0f,1.0f,0.0f);
    
+   
    glBegin(GL_QUAD_STRIP);
-
    	  //FACE
    	  
    	  // Red
@@ -357,12 +417,18 @@ void mouseButton(int button, int state, int x, int y) {
 /* Main function: GLUT runs as a console application starting at main() */
 int main(int argc, char** argv) {
    glutInit(&argc, argv);            // Initialize GLUT
-   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); // Enable double buffered mode
+   //glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH); // Enable double buffered mode
+   glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
    glutInitWindowSize(640, 480);   // Set the window's initial width & height
    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
    glutCreateWindow(title);          // Create window with the given title
    loadTextureFromFile( filename );
+   
    glutDisplayFunc(display);       // Register callback handler for window re-paint event
+   initGL();                       // Our own OpenGL initialization
+   AmbientLighting();
+   PointLight(1,1,1, 0, 1, 1);
+   //spotlight();
    glutReshapeFunc(reshape);       // Register callback handler for window re-size event
    glutIdleFunc(display);
    glutSpecialFunc(pressKey);
@@ -371,7 +437,7 @@ int main(int argc, char** argv) {
    glutMouseFunc(mouseButton);
    glutMotionFunc(mouseMove);
 
-   //initGL();                       // Our own OpenGL initialization
+   
    glutMainLoop();                 // Enter the infinite event-processing loop
    return 0;
 }
