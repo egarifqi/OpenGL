@@ -153,6 +153,12 @@ void display() {
 		glVertex3f(-3.0f, -0.7f, -7.2f);
 		glVertex3f(-8.0f, -0.7f, -7.2f);
 		
+		//dasar
+		glVertex3f(-8.0f, -0.72f,  7.5f);
+		glVertex3f(8.0f, -0.72f,  7.5f);
+		glVertex3f(8.0f, -0.72f, -9.5f);
+		glVertex3f(-8.0f, -0.72f, -9.5f);
+		
 		//atap kiri
 		glVertex3f(-8.0f, 6.0f, -3.2f);
 		glVertex3f(-3.0f, 6.0f, -3.2f);
@@ -185,6 +191,47 @@ void display() {
 		glVertex3f(-5.0f, 6.4f, -1.8f);
 		glVertex3f(-5.0f, 6.4f, -0.8f);
 		glVertex3f(-5.0f, 3.9f, -0.8f);
+		
+		//pohon
+		glVertex3f(6.0f, -0.7f,  0.3f);
+		glVertex3f(6.5f, -0.7f,  0.3f);
+		glVertex3f(6.5f, 2.2f, 0.3f);
+		glVertex3f(6.0f, 2.2f, 0.3f);
+		
+		glVertex3f(6.0f, -0.7f,  -0.2f);
+		glVertex3f(6.5f, -0.7f,  -0.2f);
+		glVertex3f(6.5f, 2.2f, -0.2f);
+		glVertex3f(6.0f, 2.2f, -0.2f);
+		
+		glVertex3f(6.0f, -0.7f,  0.3f);
+		glVertex3f(6.0f, -0.7f,  -0.2f);
+		glVertex3f(6.0f, 2.2f, -0.2f);
+		glVertex3f(6.0f, 2.2f, 0.3f);
+		
+		glVertex3f(6.5f, -0.7f,  0.3f);
+		glVertex3f(6.5f, -0.7f,  -0.2f);
+		glVertex3f(6.5f, 2.2f, -0.2f);
+		glVertex3f(6.5f, 2.2f, 0.3f);
+		
+		glVertex3f(5.0f, 2.2f,  1.3f);
+		glVertex3f(7.5f, 2.2f,  1.3f);
+		glVertex3f(7.5f, 4.7f, 1.3f);
+		glVertex3f(5.0f, 4.7f, 1.3f);
+		
+		glVertex3f(5.0f, 2.2f,  -1.2f);
+		glVertex3f(7.5f, 2.2f,  -1.2f);
+		glVertex3f(7.5f, 4.7f, -1.2f);
+		glVertex3f(5.0f, 4.7f, -1.2f);
+		
+		glVertex3f(5.0f, 2.2f,  1.3f);
+		glVertex3f(5.0f, 2.2f, -1.2f);
+		glVertex3f(5.0f, 4.7f, -1.2f);
+		glVertex3f(5.0f, 4.7f, 1.3f);
+		
+		glVertex3f(7.5f, 2.2f,  1.3f);
+		glVertex3f(7.5f, 2.2f,  -1.2f);
+		glVertex3f(7.5f, 4.7f, -1.2f);
+		glVertex3f(7.5f, 4.7f, 1.3f);
 		
 		
 		
