@@ -154,10 +154,10 @@ void display() {
 		glVertex3f(-8.0f, -0.7f, -7.2f);
 		
 		//dasar
-		glVertex3f(-8.0f, -0.72f,  7.5f);
+		/*glVertex3f(-8.0f, -0.72f,  7.5f);
 		glVertex3f(8.0f, -0.72f,  7.5f);
 		glVertex3f(8.0f, -0.72f, -9.5f);
-		glVertex3f(-8.0f, -0.72f, -9.5f);
+		glVertex3f(-8.0f, -0.72f, -9.5f);*/
 		
 		//atap kiri
 		glVertex3f(-8.0f, 6.0f, -3.2f);
