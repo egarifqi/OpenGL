@@ -70,7 +70,7 @@ bool compareParticles(Particle* particle1, Particle* particle2) {
 const float GRAVITY = 0.0f;
 const int NUM_PARTICLES = 1000;
 const float STEP_TIME = 0.01f;
-const float PARTICLE_SIZE = 0.5f;
+const float PARTICLE_SIZE = 1.2f;
 
 class ParticleEngine {
 	private:
@@ -111,7 +111,7 @@ class ParticleEngine {
 		}
 		
 		void createParticle(Particle* p) {
-			p->pos = Vec3f(0.0f, -0.2f, 0.0f);
+			p->pos = Vec3f(-2.8f, 3.0f, -0.7f);
 			p->velocity = curVelocity() + Vec3f(0.5f * randomFloat() - 0.25f,
 												0.5f * randomFloat() - 0.25f,
 												0.5f * randomFloat() - 0.25f);
@@ -515,7 +515,7 @@ void display() {
             0.0f,1.0f,0.0f);
    glBegin(GL_QUADS);
    		//tembok kiri
-   		glColor3f(1.0f, 0.0f, 0.0f);
+   		glColor3f(1.0f, 1.0f, 1.0f);
 		glVertex3f(-8.0f, -0.7f, 1.2f);
 		glVertex3f(-3.0f, -0.7f, 1.2f);
 		glVertex3f(-3.0f,  3.0f, 1.2f);
@@ -843,8 +843,8 @@ void display() {
    
    drawRain();
    
-   glLoadIdentity();
-	glTranslatef(0.0f, 0.0f, -10.0f);
+   //glLoadIdentity();
+	//glTranslatef(0.0f, 0.0f, -10.0f);
 	glScalef(2.0f, 2.0f, 2.0f);
 	
 	_particleEngine->draw();
