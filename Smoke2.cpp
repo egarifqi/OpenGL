@@ -22,6 +22,10 @@ float slowdown = 2.0;
 float velocity = 0.0;
 int loop;
 int fall;
+// variables to compute frames per second
+int frame;
+long time_frame, timebase;
+char s[50];
 
 ////////////////////////////////////////////////////////////////////////
 #include <iostream>
@@ -498,6 +502,50 @@ void computePos(){
 }
 /* Handler for window-repaint event. Called back when the window first appears and
    whenever the window needs to be re-painted. */
+
+void renderBitmapString(
+		float x,
+		float y,
+		float z,
+		void *font,
+		char *string) {
+
+	char *c;
+	glRasterPos3f(x, y,z);
+	for (c=string; *c != '\0'; c++) {
+		glutBitmapCharacter(font, *c);
+	}
+}
+
+void restorePerspectiveProjection() {
+
+	glMatrixMode(GL_PROJECTION);
+	// restore previous projection matrix
+	glPopMatrix();
+
+	// get back to modelview mode
+	glMatrixMode(GL_MODELVIEW);
+}
+
+void setOrthographicProjection() {
+
+	// switch to projection mode
+	glMatrixMode(GL_PROJECTION);
+
+	// save previous matrix which contains the
+	//settings for the perspective projection
+	glPushMatrix();
+
+	// reset matrix
+	glLoadIdentity();
+
+	// set a 2D orthographic projection
+	gluOrtho2D(0, 640, 480, 0);
+
+	// switch back to modelview mode
+	glMatrixMode(GL_MODELVIEW);
+}
+
 void display() {
 
     computePos();
@@ -848,6 +896,27 @@ void display() {
 	glScalef(2.0f, 2.0f, 2.0f);
 	
 	_particleEngine->draw();
+
+	// Code to compute frames per second
+	frame++;
+
+	time_frame=glutGet(GLUT_ELAPSED_TIME);
+	if (time_frame - timebase > 1000) {
+		sprintf(s,"FPS:%4.2f",
+			frame*1000.0/(time_frame-timebase));
+		timebase = time_frame;
+		frame = 0;
+	}
+
+        // Code to display a string (fps) with bitmap fonts
+	setOrthographicProjection();
+
+	glPushMatrix();
+	glLoadIdentity();
+	renderBitmapString(5,30,0,GLUT_BITMAP_HELVETICA_18,s);
+	glPopMatrix();
+
+	restorePerspectiveProjection();
 
    glutSwapBuffers();  // Swap the front and back frame buffers (double buffering)
 }
